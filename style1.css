@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.check-box
+{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 50px;
+}
+.pincode-input
+{
+    margin-top: 20px;;
+}
+.pincode-input input{
+    height:30px;
+    width:200px;
+    outline:none;
+}
+.pincode-input .pincode-checker-btn{
+    height:30px;
+    width:100px;
+    background-color: red;
+    border-color: red;
+    cursor: pointer;
+    color:white
+}
+.message
+{
+    text-align: center;
+    margin-top:20px ;
+}

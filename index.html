@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="">
+    <head>
+
+        <style>
+            #map {
+                position:absolute;
+                height: 50%;
+                width: 100%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <input type="text" placeholder="San Fransisco" name="search_location" id="search_location"/><button id="search_location_submit" onclick="searchAddress()">Search</button>
+        <div id="map"></div>
+
+
+
+        <script>
+
+            function initMap() {
+                var location1 = {lat: 33.1404106, lng: -96.8054861}; // sleep dallas
+                var location2 = {lat: 32.8919358, lng: -117.2031495}; // san diego sleep therapy
+                var location3 = {lat: 33.9466277, lng: -84.3320862}; // sleep better georgia
+
+                // CREATE MAP AND DEFINE ELEMENT TO DISPLAY
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: location1,
+                    scrollwheel: false,
+                    zoom: 8
+                });
+
+                var location1_marker = new google.maps.Marker({ // sleep dallas
+                    title:'sleep dallas',
+                    position: location1,
+                    map: map
+                });
+
+                var location2_marker = new google.maps.Marker({ // san diego sleep therapy
+                    title:'san diego',
+                    position: location2,
+                    map: map
+                });
+
+                var location3_marker = new google.maps.Marker({ // sleep better georgia
+                    title:'sleep better',
+                    position: location3,
+                    map: map
+                });
+
+                var marker_list = [location1_marker,location2_marker,location3_marker];
+                var marker_data_list = ['<img src="https://www.gstatic.com/images/branding/product/1x/maps_64dp.png">Sleep Dallas','San Diego Sleep Therapy','Sleep Better'];
+
+
+                // FIT DISPLAY TO CONTAIN ALL MARKERS
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0; i < marker_list.length; i++) {
+                    bounds.extend(marker_list[i].getPosition());
+                    attachMarkerMessage(marker_list[i],marker_data_list[i]);
+                }
+
+                map.fitBounds(bounds);
+
+                // ATTACH DATA AND MESSAGE TO MARKERS
+                function attachMarkerMessage(marker, message) {
+                    var infowindow = new google.maps.InfoWindow({
+                        content: message
+                    });
+
+                    marker.infowindow = infowindow;
+
+                    marker.addListener('click', function() {
+                        infowindow.open(marker.get('map'), marker);
+                    });
+                }
+
+                // DISTANCE AND NEAREST MARKER SELECTOR
+                var geocoder = new google.maps.Geocoder();
+                window.searchAddress = function(){
+                    var lat = '';
+                    var lng = '';
+                    var address = document.getElementById('search_location').value;
+
+                    geocoder.geocode( { 'address': address}, function(results, status) {
+
+                        if (status === google.maps.GeocoderStatus.OK) {
+                            lat = results[0].geometry.location.lat();
+                            lng = results[0].geometry.location.lng();
+                            //console.log(marker_list[findNearestMarker(lat,lng)]);
+                            var nearest_marker = marker_list[findNearestMarker(lat,lng)];
+                            map.panTo(nearest_marker.getPosition());
+                            map.setZoom(8);
+                            nearest_marker.infowindow.open(nearest_marker.get('map'), nearest_marker);
+                        } else {
+                            alert("Geocode was not successful for the following reason: " + status);}
+                    });
+                };
+
+                function rad(x) {return x*Math.PI/180;}
+
+                function findNearestMarker(lat,lng){
+                    var R = 6371; // radius of earth in km
+                    var distances = [];
+                    var closest = -1;
+                    for( i=0; i<marker_list.length; i++ ) {
+                        var mlat = marker_list[i].position.lat();
+                        var mlng = marker_list[i].position.lng();
+                        var dLat  = rad(mlat - lat);
+                        var dLong = rad(mlng - lng);
+                        var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                                Math.cos(rad(lat)) * Math.cos(rad(lat)) * Math.sin(dLong/2) * Math.sin(dLong/2);
+                        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                        var d = R * c;
+                        distances[i] = d;
+                        if ( closest == -1 || d < distances[closest] ) {
+                            closest = i;
+                        }
+                    }
+
+                    return closest;
+                }
+
+            }
+
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8CrBfpjl0PjvQIqJklAFYYM27HFrndYc&callback=initMap" async defer></script>
+    </body>
+</html>

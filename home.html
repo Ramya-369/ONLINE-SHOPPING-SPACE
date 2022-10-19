@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head><title>Grocery store</title>
+<link rel="stylesheet" type="text/css" href="newinterface.css">
+<link rel="stylesheet" type="text/css" href="homee.css">
+<link rel="stylesheet" type="text/css" href="login.css">
+<script src="dropdown.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body class="interfacebody">
+  <script>
+    $(document).ready(function() {
+        $(".hello").click(function() {
+            alert("This website is not ready yet:");
+        });
+    });
+
+</script>
+<div class="headd">Shopping Space</div>
+<nav>
+  <div class="navbar">
+      <a href="#home">HOME</a>
+      <div class="dropdown">
+      <button class="dropbtn" onclick="myFunction()">CATEGORY
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="categories/fruits.php">Fruits & Vegetables</a>
+        <a href="categories/fom.php">Foodgrains,Oils & Masala</a>
+        <a href="categories/snacks.php">Snacks & Branded Foods</a> 
+        <a href="categories/cleaning.php">Cleaning & Household</a>
+        <a href="categories/beautycare.php">Beauty care</a>
+
+      </div>
+      </div>
+      <a href="contact.html">CONTACT US</a>
+      <a href="pin.html">FIND YOUR NEAREST LOCATION</a>
+      <a href="categories/cart.php">ADD TO CART</a>
+      <div class="topnav">
+      <li class="search">
+        <form method="POST" action="categories/search.php">
+          <input class="srch" type="search" name="search" placeholder="Type To text">&nbsp; &nbsp;
+          <a href="#"> <button class="btn">Search</button></a>
+      </form>
+      </li>
+      </div>
+    </div>
+    </nav>
+    <section>
+        <div class="imgBx">
+        <img src="R.jpg">
+        </div>
+<div class="contentBx">
+        <div class="formBx">
+        <h2>Login</h2>
+        <form action="php/login.php" method="POST">
+            <div class="inputBx">
+                <span>Username</span>
+                <input name="username" type="text" name="">
+                </div>
+                <div class="inputBx">
+                    <span>Password</span>
+                    <input name="password" type="password" name="">
+                    </div>
+            <div class="remember">
+                <label><input  type="checkbox"name="">Remember me</label>
+            </div>
+            <div class="inputBx">
+                <input type="submit" value="sign in" name="">
+                </div>
+                <div class="inputBx">
+                    <p>Don't have an account?<a href="signup.html">Register Now</a></p>
+                    </div>
+                    </form>
+<div>
+    </div>
+    </section>
+    </body>
+</html>

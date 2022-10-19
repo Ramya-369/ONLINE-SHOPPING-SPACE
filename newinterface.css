@@ -1,0 +1,314 @@
+.para2{
+	display:block;
+	background:darkblue;
+	color:white;
+	text-align:center;
+	font-size:xx-large;
+	font-weight:900;
+	
+}
+
+	
+
+.interfacebody{
+	background-image: url('../rm94-pf-mu13-nam-22-l.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height:100vh;
+}
+.homeblue{
+	background:#b3b3ff;
+}
+.signupdetails{
+	
+	color:white;
+	padding:10px 10px 10px 10px;
+	
+	width:370px;
+	
+}
+.child{
+	padding:10px 10px 10px 250px;
+	background:#0b0f1f;
+	color:cyan;
+	width:70%;
+	float:left;
+	border:1px solid green;
+}
+.parent{
+	display:flex;
+	float:right;
+	border:3px solid black;
+}
+*{
+	box-sizing:border-box;
+}
+.para4{
+	padding:10px 100px 10px 100px;
+}
+#imgg{
+	display:block;
+	margin-left:0;
+	margin-right:0;
+	width:100px;
+	height:100px;
+}
+.homecc{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+
+	padding:10px 250px 10px 10px;
+	background:white;
+	width:60%;
+	border:1px solid green;
+	text-align:center;
+	
+}
+
+.headd{
+	color:white;
+    background:#0c101f;
+    text-align: center;
+	font-size: xx-large;
+	font-style: oblique;
+    font-weight:900;
+	padding:10px 10px 10px 10px;
+}
+.heads{
+    background:#1f2331;
+    text-align: center;
+    font-size:x-large;
+	padding:10px 10px 10px 10px;
+}
+*{
+	margin:0;
+	padding:0;
+}
+.signupdetails .input-data{
+	height:40px;
+	width:80%;
+	position:relative;
+}
+.signupdetails .input-data input{
+	height:100%;
+	width:100%;
+	border:none;
+	font-size: 25px;
+	border-bottom:2px solid silver;
+}
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+	transform: translateY(20px);
+}
+
+.signupdetails .input-data label{
+	position:relative;
+	bottom:-25px;
+	left:0px;
+	color:grey;
+	transition:all 0.3s ease;
+	
+}
+.form{
+    width: 250px;
+    height: 380px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    position: absolute;
+    top: -20px;
+    left: 870px;
+    transform: translate(0%,-5%);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.form h2{
+    width: 220px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #ff7200;
+    font-size: 22px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 2px;
+    padding: 8px;
+}
+
+.form input{
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid #ff7200;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: sans-serif;
+}
+
+.form input:focus{
+    outline: none;
+}
+
+::placeholder{
+    color: #fff;
+    font-family: Arial;
+}
+
+.btnn{
+    width: 240px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+}
+.btnn:hover{
+    background: #fff;
+    color: #ff7200;
+}
+.btnn a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.form .link{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+}
+.form .link a{
+    text-decoration: none;
+    color: #ff7200;
+}
+section{
+	position: relative;
+	wwidth:100%;
+	height:100vh;
+	display:flex;
+}
+section .imgBx
+{
+	position: relative;
+	width:50%;
+	height:100%;
+}
+section .imgBx:before{
+   content:'';
+   position:absolute;
+   top:0;
+   left:0;
+   width:100%;
+   height:100%;
+   background:linear-gradient(225deg,#e91e63,#03a9f4)
+   z-index:1;
+   mix-blend-mode:screen;
+
+}
+section .imgBx img{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+
+}
+section .contentBx
+{
+	display:flex;
+    justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+}
+section .contentBx  .formBx
+{
+    width:50%;
+}
+section .contentBx  .formBx h2{
+	color:#607d8b;
+	font-weight:600;
+	font-size:1.5em;
+	text-transform:uppercase;
+	margin-bottom: 20px;
+	border-bottom:4px solid #ff4584;
+	display:inline-block;letter-spacing: 1px;
+
+}
+section .contentBx  .formBx .inputBx 
+{
+	margin-bottom: 20px;
+}
+section .contentBx  .formBx .inputBx span
+{
+	font-size:16px;
+	margin-bottom:5px;
+	display:inline-block;
+	color:#607d8b;
+	font-weight:300;
+	font-size:16px;
+	letter-spacing: 1px;
+
+}
+section .contentBx  .formBx .inputBx input{
+	width:100%;
+	padding :10px 20px;
+	outline:none;
+	font-weight: 400;
+	border:1px solid #607d8b;
+	font-size:16px;
+	letter-spacing: 1px;
+	color:#607d8b;
+	background: transparent;
+	border-radius: 30px;
+
+}
+section .contentBx  .formBx .inputBx input[type="submit"]
+{
+	background: #ff4584;
+	color:#fff;
+	outline:none;
+	font-weight: 500;
+	cursor:pointer;
+
+}
+section .contentBx  .formBx .inputBx input[type="submit"]:hover{
+	background-image: #f53677;
+}
+
+section .contentBx  .formBx remember
+{
+	margin-bottom: 10px;
+	color:#607d8b;
+	font-weight: 400;
+	font-size: 14px;
+}
+section .contentBx  .formBx .inputBx p{
+	color:#607d8b;
+}
+section .contentBx  .formBx .inputBx p a{
+	color: #ff4584;
+}
+.button{ 
+	border-radius:2px;
+	border-width:2px;
+	border-color:black;
+}
+.border{
+	text-align-:left;
+}
+.padding{
+	padding:10px;
+	margin:10px;
+
+}
+

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Register form</title>
+        <link rel="stylesheet" href="signup.css">
+    </head>
+    <body>
+        <div class="Register-form">
+            <h1>Register Now</h1>
+            <form action="php/signup.php" method="POST">
+                <input name="fname" type="First Name" class="input-box" placeholder="Your First Name">
+                <input name="lname" type="Last Name " class="input-box" placeholder="Your Last Name">
+                <input name="email" type="email" class="input-box" placeholder="Your Email">
+                <input name="password1" type="password" class="input-box" placeholder="Your password">
+                <input name="password2" type="password" class="input-box" placeholder="confirm your password">
+                
+                <!--<select name="user_type" class="input-box">
+                    <option value="user">user</option>
+                    <option value="admin">admin</option>
+                </select> -->
+                <p><span><input name="check" type="checkbox"></span>I agree to the terms of sevices</p>
+                <button type="submit" class="sign-btn">Sign up</button> 
+                <hr>
+                <p class="or">OR</p>
+                <button type="button" class="signup-btn">Login with twitter</button>
+                <p>Do you have an account?<a href="#">Login</a></p>
+            </form>
+        </div>
+    </body>
+</html>
